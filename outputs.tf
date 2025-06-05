@@ -1,23 +1,32 @@
 output "azs" {
   value = data.aws_availability_zones.azs.names
 }
-output "public-subnet-id-1" {
-  value = aws_subnet.public[0].id
+#output "public-subnet-id-1" {
+#  value = aws_subnet.public[0].id
+#}
+#output "public-subnet-id-2" {
+# value = aws_subnet.public[1].id
+#}
+output "public-subnet-ids" {
+  value = aws_subnet.public[*].id
 }
-output "public-subnet-id-2" {
-  value = aws_subnet.public[1].id
+#output "private-subnet-id-1" {
+#  value = aws_subnet.private[0].id
+#}
+#output "private-subnet-id-2" {
+#  value = aws_subnet.private[1].id
+#}
+output "private-subnet-ids" {
+  value = aws_subnet.private[*].id
 }
-output "private-subnet-id-1" {
-  value = aws_subnet.private[0].id
-}
-output "private-subnet-id-2" {
-  value = aws_subnet.private[1].id
-}
-output "database-subnet-id-1" {
-  value = aws_subnet.database[0].id
-}
-output "database-subnet-id-2" {
-  value = aws_subnet.database[1].id
+#output "database-subnet-id-1" {
+#  value = aws_subnet.database[0].id
+#}
+#output "database-subnet-id-2" {
+#  value = aws_subnet.database[1].id
+#}
+output "database-subnet-ids" {
+  value = aws_subnet.database[*].id
 }
 output "vpc-id" {
   value = aws_vpc.main.id
